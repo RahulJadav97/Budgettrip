@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "295098233955",
+    "project_id": "budgetrip-77957",
+    "storage_bucket": "budgetrip-77957.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295098233955:android:8e63d387c55f2a6af9f456",
+        "android_client_info": {
+          "package_name": "com.budgettrip.sparks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295098233955-glsautc1vf5gv6luod4rqebq1i9fk9n4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.budgettrip.sparks",
+            "certificate_hash": "b4fa9594e48b7bcdd967c6b8e2ab508284a23b6d"
+          }
+        },
+        {
+          "client_id": "295098233955-rqf06futr6eufa7rsojggr2n3808vn0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3E1PcoLtQwETbnKFgtsH1jD6PQumZfP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295098233955-rqf06futr6eufa7rsojggr2n3808vn0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

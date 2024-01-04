@@ -1,0 +1,10 @@
+String baseUrl = "https://budgetrip.in/api/";
+String userid="";
+String useridOTP="";
+String loginType="";
+String MobileNo="";
+String otpStatus="";
+String userType="";
+String usertoken="";
+String MobileNumber="";
+String Password="";
