@@ -12,7 +12,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
+import 'signup_controller.dart';
+
 class SocialRegisterController extends GetxController {
+
+  SignupController signupcont = Get.put(SignupController());
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -59,7 +63,7 @@ class SocialRegisterController extends GetxController {
         logger.i(value.user!.email.toString());
         logger.i(value.user!.photoURL.toString());
 
-        var res = await ApiServices().socialRegister(value.user!.displayName.toString(), value.user!.email.toString(), UserTypeName,diviceToken.toString());
+        var res = await ApiServices().socialRegister(value.user!.displayName.toString(), value.user!.email.toString(), UserTypeName,signupcont.Fcmtoken.toString());
         logger.i(res.status);
         if (res.responseCode == '1') {
 
@@ -132,7 +136,7 @@ class SocialRegisterController extends GetxController {
           UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(oAuthCredential);
           if (userCredential.user != null) {
-            var res = await ApiServices().socialRegister(userCredential.user!.displayName.toString(), userCredential.user!.email.toString(), UserTypeName,diviceToken.toString());
+            var res = await ApiServices().socialRegister(userCredential.user!.displayName.toString(), userCredential.user!.email.toString(), UserTypeName,signupcont.Fcmtoken.toString());
             logger.i(res.status);
             if (res.responseCode == '1') {
               response = res.obs;

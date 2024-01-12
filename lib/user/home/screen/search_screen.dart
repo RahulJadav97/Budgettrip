@@ -7,6 +7,7 @@ import 'package:BudgeTrip/user/choose%20plan/choose_plan.dart';
 import 'package:BudgeTrip/user/profile/controller/profileGet_controller.dart';
 import 'package:BudgeTrip/user/screens/Transport_Mode_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:get/get_core/src/get_main.dart';
@@ -323,6 +324,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                           // padding:  EdgeInsets.only(right: Get.width*0.015),
                                           width: Get.width*0.3,
                                           child: TextFormField(
+                                            inputFormatters: [
+                                              FilteringTextInputFormatter.digitsOnly,
+                                              LengthLimitingTextInputFormatter(4)
+                                            ],
                                             controller: adultCTC,
                                             keyboardType: TextInputType.number,
                                             decoration: InputDecoration(
@@ -386,6 +391,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                         Container(
                                           width: Get.width*0.3,
                                           child: TextFormField(
+                                            inputFormatters: [
+                                              FilteringTextInputFormatter.digitsOnly,
+                                              LengthLimitingTextInputFormatter(4)
+                                            ],
                                             controller: childCTC,
                                             keyboardType: TextInputType.number,
                                             decoration: InputDecoration(
@@ -552,7 +561,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                   }else
                                   if(adultCTC.text.isEmpty){
                                     Fluttertoast.showToast(msg: "Please Enter Your Adult");
-                                  }else{
+                                  }
+                                  else{
                                     Get.to(()=>ChoosePlan(
                                       fromLoc:  fromLocCTC.text,
                                       toLoc: toLocCTC.text,

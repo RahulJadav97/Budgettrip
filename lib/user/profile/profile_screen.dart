@@ -54,7 +54,7 @@ var referCode ;
       print("object2");
       if(profileGetController.response.value.responseCode == "0"){
         _timer!.cancel();
-        Get.to(LoginScreen());
+        Get.offAll(LoginScreen());
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -267,6 +267,7 @@ var referCode ;
                     InkWell(
                       onTap: (){
                         Get.to(()=>MyInquiryScreen());
+
                       },
                       child: Container(
                         child: Column(

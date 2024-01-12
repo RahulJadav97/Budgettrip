@@ -38,7 +38,7 @@ class _VendorHomeScreenState extends State<VendorHomeScreen> {
       profileGetController.profileGetCont1();
       if(profileGetController.response.value.responseCode == "0"){
         _timer!.cancel();
-        Get.to(LoginScreen());
+        Get.offAll(LoginScreen());
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -283,8 +283,8 @@ class _VendorHomeScreenState extends State<VendorHomeScreen> {
                                       top:Get.height*0.020,
                                       right: Get.width*0.040,
                                       child: Text("${
-                                      indexx.fromDate == DateFormat("dd-MM-yyyy").format(currentDate)?"Today":
-                                      previousDate == indexx.fromDate?"Yesterday":
+                                      indexx.inquiryDate == DateFormat("dd-MM-yyyy").format(currentDate)?"Today":
+                                      previousDate == indexx.inquiryDate?"Yesterday":
                                       indexx.fromDate.toString()
                                       }", style: FontStyles.grey_15_w400,))
                                 ],

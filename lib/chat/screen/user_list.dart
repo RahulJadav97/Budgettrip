@@ -23,14 +23,27 @@ class _UserListScreenState extends State<UserListScreen> {
 
   @override
   void initState() {
-    _timer= Timer.periodic(Duration(seconds: 3), (timer) {
-      print("object");
-      if(profileGetController.response.value.responseCode == "0"){
-        _timer!.cancel();
-        Get.off(LoginScreen());
-      }
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      chatUserListController.chatUserListCont().then((value) =>
+
+      _timer= Timer.periodic(Duration(seconds: 3), (timer) {
+        print("object");
+        setState(() {
+          profileGetController.profileGetCont1();
+          chatUserListController.chatUserListCont1();
+        });
+
+        if(profileGetController.response.value.responseCode == "0"){
+          _timer!.cancel();
+          Get.off(LoginScreen());
+        }
+      })
+      ) ;
     });
-    chatUserListController.chatUserListCont();
+
+
+
     // countChatController.countChatCont();
 
     super.initState();

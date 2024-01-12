@@ -26,16 +26,22 @@ class _VendorListScreenState extends State<VendorListScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      chatVendorListController.chatVendorListCont();
+      chatVendorListController.chatVendorListCont().then((value) =>
+      _timer= Timer.periodic(Duration(seconds: 3), (timer) {
+        print("jjjjjjjjjjjjjj");
+        profileGetController.profileGetCont1();
+       setState(() {
+         chatVendorListController.chatVendorListCont1().then((value) => print("jhjjbbkkkkkkk"));
+       });
+        if(profileGetController.response.value.responseCode == "0"){
+          _timer!.cancel();
+          Get.offAll(LoginScreen());
+        }
+      })
+      );
+
     });
-    _timer= Timer.periodic(Duration(seconds: 3), (timer) {
-      profileGetController.profileGetCont1();
-      chatVendorListController.chatVendorListCont1();
-      if(profileGetController.response.value.responseCode == "0"){
-        _timer!.cancel();
-        Get.to(LoginScreen());
-      }
-    });
+
 
 
     // countChatController.countChatCont();
@@ -78,6 +84,7 @@ class _VendorListScreenState extends State<VendorListScreen> {
                     shrinkWrap: true,
                     itemCount: chatVendorListController.response.value.chats!.length,
                     itemBuilder: (BuildContext context,int index){
+                      print("lllllllllllllllllllllll");
                       var indexx = chatVendorListController.response.value.chats!;
                       print("${indexx.length}");
                       print("Count ${indexx[index].unReadMessage}");

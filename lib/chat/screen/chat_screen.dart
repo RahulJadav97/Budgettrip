@@ -140,11 +140,7 @@ class _ChatScreenState extends State<ChatScreen> {
     await file.writeAsBytes(pdfData);
   }
 
-  @override
-  void dispose() {
-    timer!.cancel();
-    super.dispose();
-  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -593,6 +589,11 @@ class _ChatScreenState extends State<ChatScreen> {
       });
     }
     setState(() {});
+  }
+  @override
+  void dispose() {
+    timer!.cancel();
+    super.dispose();
   }
 
 }

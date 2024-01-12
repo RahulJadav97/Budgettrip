@@ -69,6 +69,7 @@ class _MyInquiryScreenState extends State<MyInquiryScreen> {
               children: [
                 Expanded(
                   child: Container(
+                    padding: EdgeInsets.only(top: 10),
                     width: Get.width,
                     height: Get.height,
                     decoration: BoxDecoration(
@@ -99,6 +100,14 @@ class _MyInquiryScreenState extends State<MyInquiryScreen> {
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.black54,
+                                              spreadRadius: 2,
+                                              blurRadius: 6,
+                                              offset: Offset(0, 0), // changes position of shadow
+                                            ),
+                                          ],
                                           color: Colors.white,
                                           borderRadius: BorderRadius.circular(10),
                                           border: Border.all(color: Colors.grey.withOpacity(0.5), width: 1 , )
@@ -188,9 +197,9 @@ class _MyInquiryScreenState extends State<MyInquiryScreen> {
                                         top:Get.height*0.020,
                                         right: Get.width*0.040,
                                         child: Text("${
-                                            indexx.fromDate == DateFormat("dd-MM-yyyy").format(currentDate)?"Today":
-                                            previousDate == indexx.fromDate?"Yesterday":
-                                            indexx.fromDate.toString()
+                                            indexx.inquiryDate == DateFormat("dd-MM-yyyy").format(currentDate)?"Today":
+                                            previousDate == indexx.inquiryDate?"Yesterday":
+                                            indexx.inquiryDate.toString()
                                         }", style: FontStyles.grey_15_w400,))
                                   ],
                                 ),
