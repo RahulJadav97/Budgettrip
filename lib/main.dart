@@ -38,7 +38,6 @@ class _MyAppState extends State<MyApp> {
    var fcmTocken;
   @override
   void initState() {
-
     notificationServices.requestNotificationPermission();
     notificationServices.forgroundMessage();
     notificationServices.firebaseInit(context);

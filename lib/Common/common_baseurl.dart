@@ -1,4 +1,5 @@
-String baseUrl = "https://budgetrip.in/api/";
+// String baseUrl = "https://budgetrip.in/api/"; /// live base url
+String baseUrl = "https://anniecabs.com/BudgeTrip/api/";
 String userid="";
 String useridOTP="";
 String loginType="";

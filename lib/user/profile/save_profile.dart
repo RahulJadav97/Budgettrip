@@ -255,7 +255,7 @@ class _SaveProfileScreenState extends State<SaveProfileScreen> {
                       onTap: (){
                         _image != null?
                         editProfileController.editProfileCont(_image):
-                        editProfileController.editProfileCont1();
+                        editProfileController.  editProfileCont1();
                         Get.focusScope!.unfocus();
                       },
                       child: Center(
